@@ -1,0 +1,43 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "ImageProc Halogen",
+  "version": "0.1.0",
+  "identifier": "com.vernon.imageproc-halogen",
+  "build": {
+    "frontendDist": "../ui"
+  },
+  "app": {
+    "withGlobalTauri": true,
+    "windows": [
+      {
+        "title": "ImageProc Halogen",
+        "width": 1280,
+        "height": 800,
+        "minWidth": 960,
+        "minHeight": 640,
+        "resizable": true,
+        "dragDropEnabled": false
+      }
+    ],
+    "security": {
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; worker-src 'self' blob:; connect-src 'self' ipc: http://ipc.localhost"
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": "all",
+    "icon": [
+      "icons/32x32.png",
+      "icons/128x128.png",
+      "icons/icon.png",
+      "icons/app.icns",
+      "icons/app.ico"
+    ],
+    "publisher": "Vernon Sanders",
+    "copyright": "\u00a9 2026 Vernon Sanders",
+    "category": "Productivity",
+    "license": "AGPL-3.0-or-later",
+    "shortDescription": "Prepare and review image captions for LoRA training with halogen-flash-server",
+    "longDescription": "ImageProc Halogen imports image collections, captions them with halogen-flash-server (Qwen3.8-Flash-Next on AMD Strix Halo), and exports reviewed image-text pairs."
+  }
+}

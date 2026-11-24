@@ -1,0 +1,15 @@
+{
+  "name": "imageproc-halogen",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Image caption datasets tailored for halogen-flash-server",
+  "scripts": {
+    "dev": "node scripts/tauri-local.js dev",
+    "build": "node scripts/tauri-local.js build",
+    "start": "npm run dev",
+    "test": "node scripts/test-collection.js && node scripts/test-repetition.js"
+  },
+  "devDependencies": {
+    "@tauri-apps/cli": "^2"
+  }
+}

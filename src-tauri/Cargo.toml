@@ -1,0 +1,32 @@
+[package]
+name = "imageproc-halogen"
+version = "0.1.0"
+description = "Image caption datasets via halogen-flash-server"
+authors = ["Vernon Sanders"]
+license = "AGPL-3.0-or-later"
+edition = "2021"
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+tauri = { version = "2", features = [] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+reqwest = { version = "0.12", default-features = false, features = ["json", "stream", "rustls-tls"] }
+tokio = { version = "1", features = ["rt", "sync", "time"] }
+futures-util = "0.3"
+rfd = "0.15"
+base64 = "0.22"
+image = { version = "0.25", default-features = false, features = ["png", "jpeg", "webp", "tiff", "bmp"] }
+
+[profile.dev]
+opt-level = 2
+incremental = false
+
+[profile.dev.package."*"]
+opt-level = 2
+
+[profile.release]
+opt-level = 2
+incremental = true
